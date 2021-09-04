@@ -1,0 +1,232 @@
+
+
+//fETCH---------------------------------------------------------------------
+
+// let rezultatas = document.getElementById('rezultatas');
+
+
+// fetch('https://opentdb.com/api.php?amount=50&type=boolean',
+
+// )
+
+// .then(results => {
+
+//    return results.json();
+
+// }).then((data)=>{
+//     var rezultatai = data.results;
+//     var paieskosZodis = 'ani'
+//     rezultatai.forEach((item,index) => {
+//         if(item.category.toLowerCase().includes(paieskosZodis.toLowerCase())){
+//         console.log(item.category);
+//         // rezultatas.innerHTML += item.category+'<br>';
+//         rezultatas.innerHTML += `<h2> ${index} ${item.question}`;
+//         }
+//     });
+// })
+//-----------------------------------------------------------
+
+//HTTP-----------------------------------------------------------------
+
+// let request = new XMLHttpRequest();
+// let restUrl = 'https://api.coinlore.com/api/tickers/';
+
+// request.open('GET', restUrl);
+// request.send();
+
+// request.onreadystatechange = function () {
+//     if (request.readyState == 4 && request.status == 200) {
+//         // Sioj vietoj darom operacijas su gautais duomenim
+//         console.log('veikia');
+//         let questions = JSON.parse(request.responseText);
+//         console.log(questions.data[8]);
+//     }
+// }
+// //-----------------------------------------------------------------------
+//Modern fETCH---------------------------------------------------------------------
+// async function start(){
+//     const response = await fetch('https://api.thedogapi.com/v1/breeds')
+//     const data = await response.json()
+//     console.log(data);
+// }
+// start();
+
+
+
+
+//fETCH---------------------------------------------------------------------
+
+// // let id = document.getElementById('id');
+// // let dog_name = document.getElementById('name');
+// // let dog_image = document.getElementById('image');
+// let container = document.querySelector('.container')
+// // let option = document.querySelector('.option');
+// // console.log();
+
+// let select = document.querySelector('.select');
+// // let value = select.options[select.selectedIndex].value;
+
+// fetch('https://api.thedogapi.com/v1/breeds?limit=20')
+//     .then(results => {
+//         return results.json();
+
+//     }).then((data) => {
+
+//         const results = data;
+//         // console.log(results);
+//         const key = 'breed_group';
+
+// const arrayUniqueByKey = [...new Map(results.map(item =>
+//   [item[key], item])).values()];
+
+//   arrayUniqueByKey.forEach(breed =>{
+
+
+//     let option = document.createElement('option');
+//     option.classList.add('option');
+//     option.innerHTML = breed.breed_group;
+//     // option.setAttribute('value', breed.id)
+//     select.appendChild(option);
+
+
+
+//         // results.forEach(breed =>{
+//         //     let select = document.querySelector('.select');
+//         //     if(select.value==breed.id){
+//         //             console.log('atitinka');
+//         //             console.log(select.value);
+//         //         }
+//         // })
+
+
+
+
+//     })
+// })
+// select.addEventListener('change', () => {
+
+//             // console.log(option.innerHTML);
+//             fetch(`https://api.thedogapi.com/v1/breeds/${select.value}?limit=6`)
+//                 .then(results => {
+//                     return results.json();
+
+//                 }).then((data) => {
+
+//                     const results = data;
+//                     console.log(select.value);
+//                     results.forEach((breed, index) => {
+
+
+
+//                         let card = document.createElement('div');
+//                         card.classList.add('card');
+//                         container.appendChild(card);
+//                         let dog_image = document.createElement('img');
+//                         dog_image.classList.add('dog-image');
+//                         dog_image.style.backgroundImage = 'url(' + breed.image.url + ')'
+//                         card.appendChild(dog_image);
+//                         let dog_name = document.createElement('div');
+//                         dog_name.classList.add('dog-name');
+//                         dog_name.innerHTML = breed.name;
+//                         card.appendChild(dog_name);
+
+
+
+
+//                     });
+//                 })
+
+//             })
+//---------------------------------------------------------------------------------------------------------------
+
+
+// let container = document.querySelector('.container')
+// let select = document.querySelector('.select');
+// let searchInput = document.getElementById('search');
+// let noResults = document.getElementById('no-results');
+
+// console.log(data[0]);
+
+// // Passing all breeds in select input / print all cards 
+
+//     data.forEach(breed => {
+
+//         let option = document.createElement('option');
+//         option.classList.add('option');
+//         option.innerHTML = breed.breeds[0].name;
+//         option.setAttribute('value', breed.id)
+//         select.appendChild(option);
+
+//         let card = document.createElement('div');
+//         card.classList.add('card');
+//         container.appendChild(card);
+//         let dog_image = document.createElement('img');
+//         dog_image.classList.add('dog-image');
+//         dog_image.style.backgroundImage = 'url(' + breed.url + ')'
+//         card.appendChild(dog_image);
+//         let dog_name = document.createElement('div');
+//         dog_name.classList.add('dog-name');
+//         dog_name.innerHTML = breed.breeds[0].name;
+//         card.appendChild(dog_name);
+//     })
+// }
+
+
+// // Search breed name on keyup
+// searchInput.addEventListener('keyup', () => {
+
+//     container.innerHTML = '';
+//     data.forEach(breed => {
+
+//         if (breed.breeds[0].name.toLowerCase().startsWith(searchInput.value.toLowerCase())) {
+//             let option = document.createElement('option');
+//             option.classList.add('option');
+//             option.innerHTML = breed.breeds[0].name;
+//             option.setAttribute('value', breed.id)
+//             select.appendChild(option);
+
+//             let card = document.createElement('div');
+//             card.classList.add('card');
+//             container.appendChild(card);
+//             let dog_image = document.createElement('img');
+//             dog_image.classList.add('dog-image');
+//             dog_image.style.backgroundImage = 'url(' + breed.url + ')'
+//             card.appendChild(dog_image);
+//             let dog_name = document.createElement('div');
+//             dog_name.classList.add('dog-name');
+//             dog_name.innerHTML = breed.breeds[0].name;
+//             card.appendChild(dog_name);
+//             noResults.classList.remove('no-results-show');
+
+//         }
+//     })
+// if(container.innerHTML === ''){
+//     noResults.style.display='block';
+// }
+// })
+
+
+// // Single breed card print
+// select.addEventListener('change', () => {
+
+//         var result = data.filter(obj => {
+//             return obj.id === select.value;
+//         });
+
+//         container.innerHTML = '';
+//         let card = document.createElement('div');
+//         card.classList.add('card', 'single-breed-card');
+//         container.appendChild(card);
+//         let dog_image = document.createElement('img');
+//         dog_image.classList.add('dog-image', 'single-breed-image');
+//         dog_image.style.backgroundImage = 'url(' + result[0].url + ')'
+//         card.appendChild(dog_image);
+//         let dog_name = document.createElement('div');
+//         dog_name.classList.add('dog-name');
+//         dog_name.innerHTML = result[0].breeds[0].name;
+//         card.appendChild(dog_name);
+//     }
+
+
+// )
+//----------------------------------------------------------------------------------------------------------------
