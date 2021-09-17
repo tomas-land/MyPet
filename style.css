@@ -65,6 +65,12 @@ body .pattern .cardholder .card {
           box-shadow: #442602 11px 11px 20px -3px;
 }
 
+@media (max-width: 700px) {
+  body .pattern .cardholder .card {
+    width: 100%;
+  }
+}
+
 body .pattern .cardholder .card .dog-image {
   height: 250px;
   background-size: cover;
@@ -77,6 +83,13 @@ body .pattern .cardholder .card .single-breed-image {
   height: 600px;
   width: 900px;
   margin: auto;
+}
+
+@media (max-width: 700px) {
+  body .pattern .cardholder .card .single-breed-image {
+    width: 100%;
+    height: 300px;
+  }
 }
 
 body .pattern .cardholder .card .dog-name {
@@ -95,7 +108,13 @@ body .pattern .cardholder .card .dog-info {
 }
 
 body .pattern .cardholder .single-breed-card {
-  width: 70%;
+  width: auto;
+}
+
+@media (max-width: 700px) {
+  body .pattern .cardholder .single-breed-card {
+    width: 100%;
+  }
 }
 
 #button {
@@ -109,8 +128,8 @@ body .pattern .cardholder .single-breed-card {
   position: fixed;
   bottom: 30px;
   right: 30px;
-  -webkit-transition: background-color .3s,  opacity .5s, visibility .5s;
-  transition: background-color .3s,  opacity .5s, visibility .5s;
+  -webkit-transition: background-color .3s, opacity .5s, visibility .5s;
+  transition: background-color .3s, opacity .5s, visibility .5s;
   opacity: 0;
   visibility: hidden;
   z-index: 1000;

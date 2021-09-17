@@ -2,7 +2,7 @@
 
 body {
     // background-color: rgb(168, 118, 57);
-    
+
     .logo {
         height: 50px;
         background-color: chocolate;
@@ -19,7 +19,7 @@ body {
     }
 
     #no-results {
-        
+
         display: none;
         text-align: center;
 
@@ -37,12 +37,14 @@ body {
         // transform: rotate(-10deg);
         z-index: -1;
         background-attachment: fixed;
-.overlay{
-    position: absolute;
-    background-color: rgba(156, 107, 46, 0.8);
-    width: 100%;
-    height: 100%;
-}
+
+        .overlay {
+            position: absolute;
+            background-color: rgba(156, 107, 46, 0.8);
+            width: 100%;
+            height: 100%;
+        }
+
         .cardholder {
 
             margin: auto;
@@ -59,7 +61,9 @@ body {
                 display: flex;
                 justify-content: center;
                 box-shadow: #442602 11px 11px 20px -3px;
-
+                @media (max-width: 700px){
+                    width: 100%;
+                } 
                 .dog-image {
                     height: 250px;
                     background-size: cover;
@@ -72,6 +76,10 @@ body {
                     height: 600px;
                     width: 900px;
                     margin: auto;
+                    @media (max-width: 700px){
+                        width: 100%;
+                       height: 300px;
+                    } 
                 }
 
                 .dog-name {
@@ -91,7 +99,11 @@ body {
             }
 
             .single-breed-card {
-                width: 70%;
+                width: auto;
+                @media (max-width: 700px){
+                    width: 100%;
+                   
+                } 
             }
         }
     }
@@ -109,14 +121,15 @@ body {
     position: fixed;
     bottom: 30px;
     right: 30px;
-    transition: background-color .3s, 
-      opacity .5s, visibility .5s;
+    transition: background-color .3s,
+        opacity .5s, visibility .5s;
     opacity: 0;
     visibility: hidden;
     z-index: 1000;
-   color: #FF9800;
-  }
-  #button::after {
+    color: #FF9800;
+}
+
+#button::after {
     content: "\f077";
     font-family: FontAwesome;
     font-weight: normal;
@@ -124,18 +137,21 @@ body {
     font-size: 2em;
     line-height: 50px;
     color: rgb(39, 36, 36);
-    
-  }
-  #button:hover {
+
+}
+
+#button:hover {
     cursor: pointer;
     background-color: #333;
-    
-  }
-  #button:active {
+
+}
+
+#button:active {
     background-color: #555;
-  }
-  #button.show {
-      
+}
+
+#button.show {
+
     opacity: 1;
     visibility: visible;
-  }
+}

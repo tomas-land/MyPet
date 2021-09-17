@@ -109,8 +109,7 @@ selectBreed.addEventListener('change', () => {
                 console.log(oneBreed);
                 cardholder.innerHTML = '';
                 let card = document.createElement('div');
-                card.classList.add('card', 'single-breed-card');
-                card.style.width = 'auto';
+                card.classList.add('card', 'single-breed-card', 'col-12');
                 cardholder.appendChild(card);
                 let dog_image = document.createElement('img');
                 dog_image.classList.add('dog-image', 'single-breed-image');

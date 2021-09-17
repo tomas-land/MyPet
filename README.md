@@ -2,7 +2,7 @@
 
 ## Description:
 
-Basic web app calling web API 
+Basic web app calling web API from https://www.thedogapi.com/
 
 ## Project features
 
@@ -10,6 +10,9 @@ Basic web app calling web API
 - Search by breed
 - Select by breed
 - Select by breed group
+- Scroll to top 
+- Responsive design
+- Debounce for search
 
 
 ## Take a look:
